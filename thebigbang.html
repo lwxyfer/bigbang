@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+
+    <script src="jquery.min.js"></script>
+
+    <!-- This following line is needed only in case of using other easing effect rather than "linear", "swing" or "easeInQuart". You can also add the full jQuery UI instead of this file if you prefer -->
+    <script src="vendors/jquery.easings.min.js"></script>
+
+
+    <!-- This following line needed in the case of using the plugin option `scrollOverflow:true` -->
+    <script type="text/javascript" src="vendors/jquery.slimscroll.min.js"></script>
+
+    <script type="text/javascript" src="jquery.fullPage.js"></script>
+    <style>
+    body {
+        text-align:center;
+        font-family:"Microsoft YaHei";
+    }
+    h1 {
+        font-size:100px;
+    }
+    #a1 {
+            background:url("uni.jpg");
+            background-size:100% 100%; 
+            color:#fff;
+    }
+    #mine {
+            height:300px;
+    }
+    #css {
+        -webkit-transition: 1s height, 1s width;
+    }
+    #a1 p {
+        font-size:30px;
+    }
+    #a2 .slide {
+        font-size:30px;
+        height:600px;
+    }
+    #a2 .slide p {
+        display:block;
+        width:100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .blockdiv {
+        height:50%;
+    }
+    #a2 .slide h1 {
+        font-size: 40px;
+    }
+    </style>
+</head>
+<body>
+    <div id="fullpage">
+        <div class="section" id="a1">
+            <h1 id="css">宇宙演化</h1>
+            <br>
+            <p>- - - - - - - - - - - - - - - - - - - - - - - - - - - - 宇宙大爆炸 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+            <br>
+            <br>
+            <br>
+            <p></p>
+            <div id="mine"></div>
+        </div>
+        <div class="section" id="a2">
+            <h1>4个阶段</h1>
+            <div class="slide">
+                <h1>(1)</h1>
+                <p>原初核的合成 & 原子形成 </p>
+                <div class="blockdiv"></div>
+            </div>
+            <div class="slide">
+                <h1>(2)</h1>
+                 Slide 2 
+                 <div class="blockdiv"></div>
+            </div>
+            <div class="slide">
+                <h1>(3)</h1>
+                 恒星的形成
+                <div class="blockdiv"></div>
+            </div>
+            <div class="slide">
+                <h1>(4)</h1>
+                 Slide 4 
+                <div class="blockdiv"></div>
+            </div>
+        </div>
+        <div class="section" id="a3">
+            <h1>3</h1>
+        </div>
+        <div class="section" id="a4">
+            <h1>4</h1>
+        </div>
+        <div class="section" id="a5">
+            <h1>5</h1>
+        </div>
+    </div>
+    
+    <script>
+    $(document).ready(function() {
+    $('#fullpage').fullpage({
+        //Navigation
+        menu: true,
+        anchors:['firstSlide', 'secondSlide'],
+        navigation: true,
+        navigationPosition: 'right',
+        navigationTooltips: ['firstSlide', 'secondSlide'],
+        slidesNavigation: true,
+        slidesNavPosition: 'bottom',
+
+        //Scrolling
+        css3: true,
+        scrollingSpeed: 1000,
+        autoScrolling: true,
+        scrollBar: false,
+        easing: 'easeInQuart',
+        easingcss3: 'ease',
+        loopBottom: false,
+        loopTop: false,
+        loopHorizontal: true,
+        continuousVertical: false,
+        normalScrollElements: '#element1, .element2',
+        scrollOverflow: false,
+        touchSensitivity: 15,
+        normalScrollElementTouchThreshold: 5,
+
+        //Accessibility
+        keyboardScrolling: true,
+        animateAnchor: true,
+        recordHistory: true,
+
+        //Design
+        controlArrows: true,
+        verticalCentered: true,
+        resize : true,
+        sectionsColor : ['#ccc', '#fff'],
+        paddingTop: '3em',
+        paddingBottom: '10px',
+        fixedElements: '#header, .footer',
+        responsive: 0,
+
+        //Custom selectors
+        sectionSelector: '.section',
+        slideSelector: '.slide',
+
+        //events
+        onLeave: function(index, nextIndex, direction){},
+        afterLoad: function(anchorLink, index){},
+        afterRender: function(){},
+        afterResize: function(){},
+        afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+        onSlideLeave: function(anchorLink, index, slideIndex, direction){}
+    });
+});    </script>
+</body>
+</html>
